@@ -91,7 +91,7 @@
 #remove_current_plan {
   margin-left: auto;
   animation-name: btn_move;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-timing-function: linear;
   animation-delay: 1s;
   animation-iteration-count: 1;
@@ -99,7 +99,7 @@
   animation-play-state: running;
   /* Safari 与 Chrome: */
   -webkit-animation-name: btn_move;
-  -webkit-animation-duration: 2s;
+  -webkit-animation-duration: 1s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-delay: 1s;
   -webkit-animation-iteration-count: 1;
@@ -110,6 +110,9 @@
   padding: 40rpx 25rpx;
 }
 .dayPlan {
+  display: flex;
+}
+.day_word {
   display: flex;
 }
 .title {
@@ -125,6 +128,7 @@
   background-color: #434344;
   font-size: 30rpx;
   padding: 20rpx 15rpx;
+  border-bottom: 1px #000000 solid;
 }
 .point {
   color: #0055ff;

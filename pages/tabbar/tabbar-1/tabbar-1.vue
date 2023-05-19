@@ -12,7 +12,7 @@
 		</uni-swiper-dot>
 
 		<view class="content">
-			<view class="title currentPlan">当前执行计划<span class="point"
+			<view style="font-family: Bitstream Vera Serif Bol;" class="title currentPlan">当前执行计划<span class="point"
 					style="margin-left: 35upx;">({{obj.currentPlan}})</span>
 			</view>
 			<view class="subTitle dayPlan">
@@ -26,7 +26,7 @@
 
 			<view class="task point">
 				<uni-transition ref="ani" :show="show">
-					<ul v-for="item in obj.taskList">
+					<ul v-for="item in obj.taskList" style="color: #fff;">
 						<li class="taskItem">
 							<view style="max-width: 450upx;"><span style="margin-right: 40upx;">{{item.name}}</span>
 								<span>{{item.from}}-{{item.to}}</span><br>
@@ -40,8 +40,18 @@
 						</li>
 					</ul>
 				</uni-transition>
-				
-				
+			</view>
+
+			<view class="day_word subTitle">
+
+				<image @click="showWord" class="iconImage verticalCenter" src="../../../static/img/dayWord.png">
+					<span style="margin-left: 30upx;" class="verticalCenter">今日一言</span>
+
+			</view>
+			<view>
+				<uni-transition ref="ani" :show="wordShow">
+					<span class="verticalCenter freshFont" style="margin-left: 30upx;">{{obj.dayWord}}</span>
+				</uni-transition>
 			</view>
 		</view>
 	</view>
@@ -52,6 +62,7 @@
 		data() {
 			return {
 				obj: {
+					dayWord: "百尺朱楼临大道。楼外轻雷，不间昏和晓。独倚阑干人窈窕。闲中数尽行人小。一霎车尘生树杪。陌上楼头，都向尘中老。薄晚西风吹雨到。明朝又是伤流潦。",
 					currentPlan: "备考",
 					taskList: [{
 							id: 1,
@@ -80,6 +91,7 @@
 					]
 				},
 				show: false,
+				wordShow: false,
 				info: [{
 						colorClass: 'uni-bg-red',
 						url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
@@ -130,6 +142,9 @@
 		methods: {
 			showTask() {
 				this.show = !this.show;
+			},
+			showWord() {
+				this.wordShow = !this.wordShow;
 			},
 			change(e) {
 				this.current = e.detail.current
@@ -231,7 +246,7 @@
 	#remove_current_plan {
 		margin-left: auto;
 		animation-name: btn_move;
-		animation-duration: 2s;
+		animation-duration: 1s;
 		animation-timing-function: linear;
 		animation-delay: 1s;
 		animation-iteration-count: 1;
@@ -239,7 +254,7 @@
 		animation-play-state: running;
 		/* Safari 与 Chrome: */
 		-webkit-animation-name: btn_move;
-		-webkit-animation-duration: 2s;
+		-webkit-animation-duration: 1s;
 		-webkit-animation-timing-function: linear;
 		-webkit-animation-delay: 1s;
 		-webkit-animation-iteration-count: 1;
@@ -252,6 +267,10 @@
 	}
 
 	.dayPlan {
+		display: flex;
+	}
+
+	.day_word {
 		display: flex;
 	}
 
@@ -270,6 +289,7 @@
 		background-color: $style-default-title-backgroud-color;
 		font-size: $style-defalut-font-size-max;
 		padding: 20upx 15upx;
+		border-bottom: 1px #000000 solid;
 	}
 
 	.point {

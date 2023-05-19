@@ -79,10 +79,21 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       obj: {
+        dayWord: "百尺朱楼临大道。楼外轻雷，不间昏和晓。独倚阑干人窈窕。闲中数尽行人小。一霎车尘生树杪。陌上楼头，都向尘中老。薄晚西风吹雨到。明朝又是伤流潦。",
         currentPlan: "备考",
         taskList: [{
           id: 1,
@@ -108,6 +119,7 @@ var _default = {
         }]
       },
       show: false,
+      wordShow: false,
       info: [{
         colorClass: 'uni-bg-red',
         url: 'https://web-assets.dcloud.net.cn/unidoc/zh/shuijiao.jpg',
@@ -152,6 +164,9 @@ var _default = {
   methods: {
     showTask: function showTask() {
       this.show = !this.show;
+    },
+    showWord: function showWord() {
+      this.wordShow = !this.wordShow;
     },
     change: function change(e) {
       this.current = e.detail.current;
@@ -309,7 +324,7 @@ var components
 try {
   components = {
     uniTransition: function () {
-      return Promise.all(/*! import() | uni_modules/uni-transition/components/uni-transition/uni-transition */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-transition/components/uni-transition/uni-transition")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-transition/components/uni-transition/uni-transition.vue */ 433))
+      return Promise.all(/*! import() | uni_modules/uni-transition/components/uni-transition/uni-transition */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uni-transition/components/uni-transition/uni-transition")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uni-transition/components/uni-transition/uni-transition.vue */ 293))
     },
   }
 } catch (e) {
